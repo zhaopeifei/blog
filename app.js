@@ -32,6 +32,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/favicon.ico',express.static('favicon.ico'));
 app.use('/', homepage);
 
 // catch 404 and forward to error handler
