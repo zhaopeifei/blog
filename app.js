@@ -36,10 +36,10 @@ app.use('/', homepage);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    //var err = new Error('Not Found');
+    var err = new Error('Not Found');
     err.status = 404;
-    res.render('404');
-    //next(err);
+    //res.render('404');
+    next(err);
 });
 
 // error handlers
@@ -49,8 +49,8 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('500');
-        //res.render('error', {message: err.message,error: err});
+        //res.render('500');
+        res.render('error', {message: err.message, error: err});
     });
 }
 
@@ -58,8 +58,8 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('500');
-    //res.render('error', {message: err.message,error: {}});
+    //res.render('500');
+    res.render('error', {message: err.message, error: {}});
 });
 
 //app.listen(3000);
