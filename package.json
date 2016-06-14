@@ -21,7 +21,6 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "express3-handlebars": "^0.5.2",
-    "morgan": "^1.7.0",
-    "serve-favicon": "^2.3.0"
+    "morgan": "^1.7.0"
   }
 }
