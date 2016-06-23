@@ -1,131 +1,94 @@
 body {
-  margin: 0;
-  font-family: "Helvetica neue", Helvetica, Tahoma, "lantinghei sc", "Microsoft Yahei", sans-serif; }
-
-body:before {
-  display: block;
-  height: 50px;
-  content: ""; }
-
-#appHeader {
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  border-top: 2px solid #38f;
-  width: 100%;
-  height: 48px;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
-  #appHeader div {
-    margin: 0 auto;
-    max-width: 1200px;
-    top: 0; }
-
-.header-left {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 48px;
-  float: left; }
-
-.header-right {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 48px;
-  float: right; }
-
-.header-left li,
-.header-right li {
-  display: inline-block;
-  height: 48px; }
-
-.header-link {
-  display: block;
-  box-sizing: border-box;
-  padding: 0 15px;
-  height: 48px;
-  font-size: 16px;
-  line-height: 48px;
-  text-decoration: none; }
-  .header-link:hover, .header-link:focus {
-    color: #fff;
-    background-color: #38f; }
-  .header-link:active {
-    background-color: #369bff; }
-
-.header-left .header-link {
-  font-family: "CaiYunHanMaoBi-3f28ad4b362a5", "Helvetica neue", Helvetica, Tahoma, "lantinghei sc", "Microsoft Yahei", sans-serif;
-  font-size: 32px; }
-
-#appFooter {
-  position: absolute;
-  width: 100%;
-  color: #888;
-  background-color: #333; }
-  #appFooter div {
-    margin: 0 auto;
-    max-width: 1200px;
-    font-size: 16px; }
-
-body {
   background-image: url(../images/homeBackground.jpg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed; }
 
 #appMain {
-  color: white;
-  width: 100%; }
+  width: 100%;
+  color: white; }
   #appMain .page {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    min-height: 90vh;
     align-items: center;
-    margin: 10px auto;
-    height: 80vh; }
+    flex-direction: column;
+    justify-content: center; }
+    #appMain .page:nth-child(2n+1) {
+      background-color: rgba(255, 255, 255, 0.3);
+      border-bottom-left-radius: 50vw 12vh;
+      border-bottom-right-radius: 50vw 12vh; }
 
 .my-photo {
   display: block;
-  border-radius: 50%;
-  width: 100px;
   margin: 10px auto;
-  top: 0;
-  bottom: 0; }
+  border-radius: 50%;
+  width: 100px; }
+  .my-photo:hover {
+    animation-name: freeFall;
+    animation-delay: .3s;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out; }
 
+@keyframes freeFall {
+  5% {
+    transform: rotate(90deg); }
+  15% {
+    transform: rotate(-80deg); }
+  25% {
+    transform: rotate(70deg); }
+  35% {
+    transform: rotate(-60deg); }
+  45% {
+    transform: rotate(50deg); }
+  55% {
+    transform: rotate(-40deg); }
+  65% {
+    transform: rotate(30deg); }
+  75% {
+    transform: rotate(-20deg); }
+  85% {
+    transform: rotate(10deg); }
+  95% {
+    transform: rotate(-3deg); } }
 .flex-row {
   display: flex;
   max-width: 1200px;
-  flex-flow: row wrap;
-  justify-content: center; }
+  align-items: stretch;
+  flex-flow: row wrap; }
 
 .contact-icon {
-  flex: 1;
-  display: block;
   margin: 10px;
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  transition: background ease-in-out .3s; }
+  transition: background ease-in-out .3s, transform .3s ease-in-out; }
   .contact-icon svg {
-    margin: 0 auto;
     fill: #fff; }
   .contact-icon:hover {
-    background-color: rgba(255, 255, 255, 0.5); }
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1); }
   .contact-icon:hover svg {
     fill: #333; }
+  .contact-icon:active svg {
+    fill: #000; }
 
 .abstract-pro {
-  flex: 1;
-  min-width: 150px;
-  background-color: rgba(52, 52, 52, 0.5);
-  border-radius: 20px;
   margin: 10px;
-  padding: 20px; }
+  border-radius: 20px;
+  padding: 20px;
+  min-width: 150px;
+  text-decoration: none;
+  color: inherit;
+  background-color: rgba(52, 52, 52, 0.3);
+  transition: transform .3s ease-in-out,background-color .3s ease-in-out;
+  flex: 1; }
   .abstract-pro h3 {
     text-align: center; }
   .abstract-pro p {
-    text-align: justify;
-    line-height: 1.6em; }
+    line-height: 1.6em;
+    text-align: justify; }
+  .abstract-pro:hover {
+    background-color: rgba(52, 52, 52, 0.6);
+    transform: scale(1.1); }
 
 /*# sourceMappingURL=homepage.css.map */

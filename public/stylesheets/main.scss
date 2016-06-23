@@ -1,10 +1,8 @@
 
 $containerMaxWidth: 1200px;
 $headerNavHeight: 48px;
-
 $bodyFontFamily: "Helvetica neue",Helvetica,Tahoma,"lantinghei sc","Microsoft Yahei",sans-serif;
 $faviconFontFamily: "CaiYunHanMaoBi-3f28ad4b362a5";
-
 $headerColor: #38f;
 $backgroundColor: #fff;
 $footerFontColor: #888;
@@ -17,7 +15,6 @@ $footerBGColor: #333;
 
 body {
     margin: 0;
-
     font-family: $bodyFontFamily;
 }
 
@@ -41,12 +38,13 @@ body:before {
     background-color: #fff;
 
     box-shadow: 0 0 5px rgba(0,0,0,.4);
-
     div {
-        @include centerBox($containerMaxWidth);
         top: 0;
+
+        @include centerBox($containerMaxWidth);
     }
 }
+
 
 @mixin headerList {
     list-style: none;
@@ -56,10 +54,11 @@ body:before {
     height: $headerNavHeight;
 }
 
-@each $lr in left,right{
+@each $lr in left,right {
     .header-#{$lr} {
-        @include headerList;
         float: $lr;
+
+        @include headerList;
     }
 }
 
@@ -68,27 +67,36 @@ body:before {
     display: inline-block;
 
     height: $headerNavHeight;
+
+    vertical-align: middle;
 }
 
 .header-link {
     display: block;
+
     box-sizing: border-box;
     padding: 0 15px;
     height: $headerNavHeight;
-
     //font: #{$headerNavHeight/3}/#{$headerNavHeight};
+
     font-size: $headerNavHeight/3;
     line-height: $headerNavHeight;
     text-decoration: none;
 
-    &:hover,
+    transition: background .3s ease-in-out, color .3s ease-in, transform .3s ease-in-out;
+
+    &:hover {
+        color: #fff;
+        background-color: $headerColor;
+        transform: scale(1.1,1);
+    }
     &:focus {
         color: #fff;
         background-color: $headerColor;
     }
-
     &:active {
-        background-color: $headerColor + #031323;
+        background-color: $headerColor - #031323;
+        //transform: scale(1.1);
     }
 }
 
@@ -99,15 +107,52 @@ body:before {
 
 
 #appFooter {
-    position: absolute;
-
     width: 100%;
 
     color: $footerFontColor;
     background-color: $footerBGColor;
 
-    div {
-        @include centerBox($containerMaxWidth);
+    .flex-left-right {
         font-size: 16px;
+        display: flex;
+        align-items: center;
+        @include centerBox($containerMaxWidth);
+    }
+}
+
+.flex-left-right {
+    display: flex;
+
+    max-width: $containerMaxWidth;
+    margin: 0 auto;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-row {
+    display: flex;
+
+    max-width: $containerMaxWidth;
+
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.footer-icon {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+
+    transition: color .3s ease-in, transform .3s ease-in-out;
+
+    svg {
+        fill: $footerFontColor;
+    }
+
+    &:hover svg,
+    &:focus svg {
+        transform: scale(1.2);
+        fill: #fff;
     }
 }

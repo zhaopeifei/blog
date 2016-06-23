@@ -1,4 +1,4 @@
-@import "main.scss";
+$containerMaxWidth: 1200px;
 
 body {
     background: {
@@ -10,70 +10,110 @@ body {
 }
 
 #appMain {
-    color: white;
     width: 100%;
+
+    color: white;
     .page {
         display: flex;
+
+        min-height: 90vh;
+
+        align-items: center;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        margin:10px auto;
-        height: 80vh;
-
+        
+        &:nth-child(2n+1) {
+            background-color: rgba(255,255,255,.3);
+            border-bottom-left-radius: 50vw 12vh;
+            border-bottom-right-radius: 50vw 12vh;
+        }
     }
 }
 
 .my-photo {
     display: block;
+
+    margin: 10px auto;
     border-radius: 50%;
     width: 100px;
-    margin: 10px auto; 
-    top: 0;
-    bottom: 0;
+    &:hover {
+        animation-name: freeFall;
+        animation-delay: .3s;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+@keyframes freeFall {
+    5% { transform: rotate(90deg); }
+    15% { transform: rotate(-80deg); }
+    25% { transform: rotate(70deg); }
+    35% { transform: rotate(-60deg); }
+    45% { transform: rotate(50deg); }
+    55% { transform: rotate(-40deg); }
+    65% { transform: rotate(30deg); }
+    75% { transform: rotate(-20deg); }
+    85% { transform: rotate(10deg); }
+    95% { transform: rotate(-3deg); }
 }
 
 .flex-row {
     display: flex;
+
     max-width: $containerMaxWidth;
+
+    align-items: stretch;
     flex-flow: row wrap;
-    justify-content: center;
 }
 
 .contact-icon {
-    flex: 1;
-    display: block;
     margin: 10px;
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    transition: background ease-in-out .3s;
+
+    transition: background ease-in-out .3s, transform .3s ease-in-out;
 
     svg {
-        margin: 0 auto;
         fill: #fff;
     }
-
     &:hover {
         background-color: rgba(255,255,255,.5);
+        transform: scale(1.1);
     }
-
     &:hover svg {
         fill: #333;
+    }
+    &:active svg {
+        fill: #000;
     }
 }
 
 .abstract-pro {
-    flex: 1;
-    min-width: 150px;
-    background-color: rgba(52,52,52,.5);
-    border-radius: 20px;
     margin: 10px;
+    border-radius: 20px;
     padding: 20px;
+    min-width: 150px;
+
+    text-decoration: none;
+
+    color: inherit;
+    background-color: rgba(52,52,52,.3);
+
+    transition: transform .3s ease-in-out,background-color .3s ease-in-out;
+
+    flex: 1;
     h3 {
         text-align: center;
     }
     p {
-        text-align: justify;
         line-height: 1.6em;
+        text-align: justify;
+    }
+    &:hover {
+        background-color: rgba(52,52,52,.6);
+
+        transform: scale(1.1);
     }
 }
+

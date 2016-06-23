@@ -17,28 +17,29 @@ body:before {
   background-color: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
   #appHeader div {
+    top: 0;
     margin: 0 auto;
-    max-width: 1200px;
-    top: 0; }
+    max-width: 1200px; }
 
 .header-left {
+  float: left;
   list-style: none;
   margin: 0;
   padding: 0;
-  height: 48px;
-  float: left; }
+  height: 48px; }
 
 .header-right {
+  float: right;
   list-style: none;
   margin: 0;
   padding: 0;
-  height: 48px;
-  float: right; }
+  height: 48px; }
 
 .header-left li,
 .header-right li {
   display: inline-block;
-  height: 48px; }
+  height: 48px;
+  vertical-align: middle; }
 
 .header-link {
   display: block;
@@ -47,25 +48,56 @@ body:before {
   height: 48px;
   font-size: 16px;
   line-height: 48px;
-  text-decoration: none; }
-  .header-link:hover, .header-link:focus {
+  text-decoration: none;
+  transition: background .3s ease-in-out, color .3s ease-in, transform .3s ease-in-out; }
+  .header-link:hover {
+    color: #fff;
+    background-color: #38f;
+    transform: scale(1.1, 1); }
+  .header-link:focus {
     color: #fff;
     background-color: #38f; }
   .header-link:active {
-    background-color: #369bff; }
+    background-color: #3075dc; }
 
 .header-left .header-link {
   font-family: "CaiYunHanMaoBi-3f28ad4b362a5", "Helvetica neue", Helvetica, Tahoma, "lantinghei sc", "Microsoft Yahei", sans-serif;
   font-size: 32px; }
 
 #appFooter {
-  position: absolute;
   width: 100%;
   color: #888;
   background-color: #333; }
-  #appFooter div {
+  #appFooter .flex-left-right {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
     margin: 0 auto;
-    max-width: 1200px;
-    font-size: 16px; }
+    max-width: 1200px; }
+
+.flex-left-right {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center; }
+
+.footer-row {
+  display: flex;
+  max-width: 1200px;
+  align-items: center;
+  flex-flow: row wrap; }
+
+.footer-icon {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  transition: color .3s ease-in, transform .3s ease-in-out; }
+  .footer-icon svg {
+    fill: #888; }
+  .footer-icon:hover svg, .footer-icon:focus svg {
+    transform: scale(1.2);
+    fill: #fff; }
 
 /*# sourceMappingURL=main.css.map */
