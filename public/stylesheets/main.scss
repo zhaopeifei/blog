@@ -1,0 +1,113 @@
+
+$containerMaxWidth: 1200px;
+$headerNavHeight: 48px;
+
+$bodyFontFamily: "Helvetica neue",Helvetica,Tahoma,"lantinghei sc","Microsoft Yahei",sans-serif;
+$faviconFontFamily: "CaiYunHanMaoBi-3f28ad4b362a5";
+
+$headerColor: #38f;
+$backgroundColor: #fff;
+$footerFontColor: #888;
+$footerBGColor: #333;
+
+@mixin centerBox($maxWidth) {
+    margin: 0 auto;
+    max-width: $maxWidth;
+}
+
+body {
+    margin: 0;
+
+    font-family: $bodyFontFamily;
+}
+
+body:before {
+    display: block;
+
+    height: $headerNavHeight + 2px;
+
+    content: "";
+}
+
+#appHeader {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+
+    border-top: 2px solid $headerColor;
+    width: 100%;
+    height: $headerNavHeight;
+
+    background-color: #fff;
+
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+
+    div {
+        @include centerBox($containerMaxWidth);
+        top: 0;
+    }
+}
+
+@mixin headerList {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+    height: $headerNavHeight;
+}
+
+@each $lr in left,right{
+    .header-#{$lr} {
+        @include headerList;
+        float: $lr;
+    }
+}
+
+.header-left li,
+.header-right li {
+    display: inline-block;
+
+    height: $headerNavHeight;
+}
+
+.header-link {
+    display: block;
+    box-sizing: border-box;
+    padding: 0 15px;
+    height: $headerNavHeight;
+
+    //font: #{$headerNavHeight/3}/#{$headerNavHeight};
+    font-size: $headerNavHeight/3;
+    line-height: $headerNavHeight;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: #fff;
+        background-color: $headerColor;
+    }
+
+    &:active {
+        background-color: $headerColor + #031323;
+    }
+}
+
+.header-left .header-link {
+    font-family: $faviconFontFamily,$bodyFontFamily;
+    font-size: 32px;
+}
+
+
+#appFooter {
+    position: absolute;
+
+    width: 100%;
+
+    color: $footerFontColor;
+    background-color: $footerBGColor;
+
+    div {
+        @include centerBox($containerMaxWidth);
+        font-size: 16px;
+    }
+}

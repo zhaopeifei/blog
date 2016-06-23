@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+
+    font-family: "Helvetica neue",Helvetica,Tahoma,"lantinghei sc","Microsoft Yahei",sans-serif;
+}
+
+body:before {
+    display: block;
+
+    height: 50px;
+
+    content: "";
+}
+
+#appHeader {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+
+    border-top: 2px solid #38f;
+    width: 100%;
+    height: 48px;
+
+    background-color: #fff;
+
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+}
+
+.header-navs {
+    top: 0;
+
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.header-left,
+.header-right {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+    height: 48px;
+}
+
+.header-left {
+    float: left;
+}
+
+.header-right {
+    float: right;
+}
+
+.header-navs li {
+    display: inline-block;
+
+    height: 48px;
+}
+
+.header-link {
+    display: block;
+
+    padding: 0 15px;
+    height: 48px;
+
+    font-size: 16px;
+    line-height: 48px;
+    text-decoration: none;
+
+    color: #000;
+}
+
+.header-left .header-link {
+    font-family: "CaiYunHanMaoBi-3f28ad4b362a5","Helvetica neue",Helvetica,sans-serif;
+    font-size: 32px;
+}
+
+.header-link:hover,
+.header-link:focus {
+    color: #fff;
+    background-color: #38f;
+}
+
+.header-link:active {
+    background-color: #3075dc;
+}
+
+#appMain {
+    margin: 5px auto;
+    max-width: 1200px;
+}
+
+#appFooter {
+    position: absolute;
+
+    width: 100%;
+
+    color: #888;
+    background-color: #333;
+}
+
+#appFooter div {
+    margin: 0 auto;
+    max-width: 1200px;
+    font-size: 16px;
+}
+

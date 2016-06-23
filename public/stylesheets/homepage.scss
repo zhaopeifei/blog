@@ -1,0 +1,79 @@
+@import "main.scss";
+
+body {
+    background: {
+        image: url(../images/homeBackground.jpg);
+        size: cover;
+        position: center;
+        attachment: fixed;
+    }
+}
+
+#appMain {
+    color: white;
+    width: 100%;
+    .page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin:10px auto;
+        height: 80vh;
+
+    }
+}
+
+.my-photo {
+    display: block;
+    border-radius: 50%;
+    width: 100px;
+    margin: 10px auto; 
+    top: 0;
+    bottom: 0;
+}
+
+.flex-row {
+    display: flex;
+    max-width: $containerMaxWidth;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.contact-icon {
+    flex: 1;
+    display: block;
+    margin: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition: background ease-in-out .3s;
+
+    svg {
+        margin: 0 auto;
+        fill: #fff;
+    }
+
+    &:hover {
+        background-color: rgba(255,255,255,.5);
+    }
+
+    &:hover svg {
+        fill: #333;
+    }
+}
+
+.abstract-pro {
+    flex: 1;
+    min-width: 150px;
+    background-color: rgba(52,52,52,.5);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+    h3 {
+        text-align: center;
+    }
+    p {
+        text-align: justify;
+        line-height: 1.6em;
+    }
+}

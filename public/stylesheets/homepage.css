@@ -68,4 +68,64 @@ body:before {
     max-width: 1200px;
     font-size: 16px; }
 
-/*# sourceMappingURL=main.css.map */
+body {
+  background-image: url(../images/homeBackground.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; }
+
+#appMain {
+  color: white;
+  width: 100%; }
+  #appMain .page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    height: 80vh; }
+
+.my-photo {
+  display: block;
+  border-radius: 50%;
+  width: 100px;
+  margin: 10px auto;
+  top: 0;
+  bottom: 0; }
+
+.flex-row {
+  display: flex;
+  max-width: 1200px;
+  flex-flow: row wrap;
+  justify-content: center; }
+
+.contact-icon {
+  flex: 1;
+  display: block;
+  margin: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: background ease-in-out .3s; }
+  .contact-icon svg {
+    margin: 0 auto;
+    fill: #fff; }
+  .contact-icon:hover {
+    background-color: rgba(255, 255, 255, 0.5); }
+  .contact-icon:hover svg {
+    fill: #333; }
+
+.abstract-pro {
+  flex: 1;
+  min-width: 150px;
+  background-color: rgba(52, 52, 52, 0.5);
+  border-radius: 20px;
+  margin: 10px;
+  padding: 20px; }
+  .abstract-pro h3 {
+    text-align: center; }
+  .abstract-pro p {
+    text-align: justify;
+    line-height: 1.6em; }
+
+/*# sourceMappingURL=homepage.css.map */
