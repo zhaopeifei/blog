@@ -21,14 +21,15 @@ body {
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        
         &:nth-child(2n+1) {
-            background-color: rgba(255,255,255,.3);
-            border-bottom-left-radius: 50vw 12vh;
             border-bottom-right-radius: 50vw 12vh;
+            border-bottom-left-radius: 50vw 12vh;
+
+            background-color: rgba(255,255,255,.3);
         }
     }
 }
+
 
 .my-photo {
     display: block;
@@ -36,13 +37,19 @@ body {
     margin: 10px auto;
     border-radius: 50%;
     width: 100px;
+
+    animation-name: freeFall;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: .3s;
     &:hover {
         animation-name: freeFall;
-        animation-delay: .3s;
         animation-duration: 5s;
         animation-timing-function: ease-in-out;
+        animation-delay: .3s;
     }
 }
+
 
 @keyframes freeFall {
     5% { transform: rotate(90deg); }
@@ -73,12 +80,13 @@ body {
     height: 50px;
 
     transition: background ease-in-out .3s, transform .3s ease-in-out;
-
     svg {
         fill: #fff;
     }
+    
     &:hover {
         background-color: rgba(255,255,255,.5);
+
         transform: scale(1.1);
     }
     &:hover svg {
@@ -116,4 +124,5 @@ body {
         transform: scale(1.1);
     }
 }
+
 

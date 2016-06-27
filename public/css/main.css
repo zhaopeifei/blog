@@ -1,0 +1,167 @@
+body
+{
+    font-family: 'Helvetica neue', Helvetica, Tahoma, 'lantinghei sc', 'Microsoft Yahei', sans-serif; 
+
+    margin: 0;
+}
+
+body:before
+{
+    display: block;
+
+    height: 50px;
+
+    content: '';
+}
+
+#appHeader
+{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+
+    width: 100%;
+    height: 48px;
+
+    border-top: 2px solid #38f;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+}
+#appHeader div
+{
+    top: 0;
+
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.header-left
+{
+    float: left;
+
+    height: 48px; 
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.header-right
+{
+    float: right;
+
+    height: 48px; 
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.header-left li,
+.header-right li
+{
+    display: inline-block;
+
+    height: 48px;
+
+    vertical-align: middle;
+}
+
+.header-link
+{
+    font-size: 16px;
+    line-height: 48px;
+
+    display: block;
+
+    box-sizing: border-box;
+    height: 48px;
+    padding: 0 15px;
+
+    transition: background .3s ease-in-out, color .3s ease-in, transform .3s ease-in-out; 
+    text-decoration: none;
+}
+.header-link:hover
+{
+    transform: scale(1.1, 1); 
+
+    color: #fff;
+    background-color: #38f;
+}
+.header-link:focus
+{
+    color: #fff;
+    background-color: #38f;
+}
+.header-link:active
+{
+    background-color: #3075dc;
+}
+
+.header-left .header-link
+{
+    font-family: 'CaiYunHanMaoBi-3f28ad4b362a5', 'Helvetica neue', Helvetica, Tahoma, 'lantinghei sc', 'Microsoft Yahei', sans-serif;
+    font-size: 32px;
+}
+
+#appFooter
+{
+    width: 100%;
+
+    color: #888;
+    background-color: #333;
+}
+#appFooter .flex-left-right
+{
+    font-size: 16px;
+
+    display: flex;
+
+    max-width: 1200px; 
+    margin: 0 auto;
+
+    align-items: center;
+}
+
+.flex-left-right
+{
+    display: flex;
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-row
+{
+    display: flex;
+
+    max-width: 1200px;
+
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.footer-icon
+{
+    width: 32px;
+    height: 32px;
+
+    transition: color .3s ease-in, transform .3s ease-in-out; 
+
+    border-radius: 50%;
+}
+.footer-icon svg
+{
+    fill: #888;
+}
+.footer-icon:hover svg,
+.footer-icon:focus svg
+{
+    transform: scale(1.2);
+
+    fill: #fff;
+}

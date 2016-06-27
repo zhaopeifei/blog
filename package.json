@@ -21,6 +21,13 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "express3-handlebars": "^0.5.2",
+    "mongoose": "^4.5.2",
     "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-csscomb": "^3.0.7",
+    "gulp-sass": "^2.3.2"
   }
 }
