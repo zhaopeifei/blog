@@ -165,3 +165,11 @@ body
 
     background-color: rgba(52, 52, 52, .6);
 }
+
+.login-a
+{
+    cursor: pointer; 
+    text-decoration: none;
+
+    color: inherit;
+}

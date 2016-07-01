@@ -49,6 +49,7 @@ body:before {
     }
 }
 
+
 @mixin headerList {
     list-style: none;
 
@@ -111,7 +112,6 @@ body:before {
 #appMain {
     flex: 1;
 }
-
 
 #appFooter {
     width: 100%;
