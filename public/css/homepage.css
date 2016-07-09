@@ -117,7 +117,7 @@ body
 }
 .contact-icon svg
 {
-    fill: #fff;
+    fill: white;
 }
 .contact-icon:hover
 {
@@ -131,7 +131,7 @@ body
 }
 .contact-icon:active svg
 {
-    fill: #000;
+    fill: black;
 }
 
 .abstract-pro

@@ -12,6 +12,9 @@ gulp.task('default', function(){
     gulp.src('./public/images/*.*')
         .pipe(gulp.dest('../blog_peyton/public/images'));
 
+    gulp.src('./public/sources/*.*')
+        .pipe(gulp.dest('../blog_peyton/public/sources'));
+
     gulp.src('./bin/*')
         .pipe(gulp.dest('../blog_peyton/bin'));
 

@@ -8,11 +8,11 @@
 {
     display: flex;
 
-    height: 30px; 
+    height: 30px;
 
+    align-items: flex-end;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items: flex-end;
 }
 .nav-editor label
 {
@@ -23,7 +23,7 @@
 .nav-editor select
 {
     min-width: 100px;
-    max-width: 400px; 
+    max-width: 400px;
 
     flex: 1;
 }
@@ -37,9 +37,9 @@
 {
     display: flex;
 
+    align-items: stretch;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: stretch;
 }
 
 .editor
@@ -47,7 +47,7 @@
     min-width: 600px;
     max-width: 1000px;
     min-height: 80vh;
-    max-height: 88vh; 
+    max-height: 88vh;
     padding: 20px;
 
     flex: 1;
@@ -59,9 +59,9 @@
 }
 .editor article
 {
-    overflow-y: scroll; 
+    overflow-y: scroll;
 
-    height: 100%;
+    height: 100%; 
 
     border: 1px solid darkgray;
 }
