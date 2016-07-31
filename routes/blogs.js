@@ -2,25 +2,18 @@ var express = require('express');
 var router = express.Router();
 
 var Models = require('../database/db.js');
-var markdown = require('markdown').markdown;
 
 router.get('/',function(req, res){
-    Models.Post.find(function(err,posts){
+    Models.Minder.findOne(function(err,minder){
         if(err){
             console.log(err);
+            res.status(400).send('{"show":"数据未成功获取~"}');
         }else{
-            //console.log(post.content);
-            var context = {
-                posts: posts.map(function(post){
-                    return {
-                        title: post.title,
-                        buildDate: post.buildDate,
-                        createDate: post.createDate,
-                        content: markdown.toHTML(post.content)
-                    };
-                })
-            };
-            res.render('blogs',context);
+            res.render('blogs',{ sources: [
+                    { source: "/bower_components/bootstrap/dist/css/bootstrap.css" },
+                    { source: "/bower_components/kityminder-core/dist/kityminder.core.css" },
+                    { source: "/css/blogs.css"}
+                ], minderData: minder.content });
         }
     });
 });
@@ -29,12 +22,12 @@ router.get('/',function(req, res){
 router.get('/peyton', function(req, res, next){
     
     res.render('blogs_peyton', { layout: 'main_peyton', sources: [
-            { source: "/components/bootstrap/dist/css/bootstrap.css" },
-            { source: "/components/codemirror/lib/codemirror.css" },
-            { source: "/components/hotbox/hotbox.css" },
-            { source: "/components/kityminder-core/dist/kityminder.core.css" },
-            { source: "/components/color-picker/dist/color-picker.min.css" },
-            { source: "/components/kityminder-editor/kityminder.editor.min.css"},
+            { source: "/bower_components/bootstrap/dist/css/bootstrap.css" },
+            { source: "/bower_components/codemirror/lib/codemirror.css" },
+            { source: "/bower_components/hotbox/hotbox.css" },
+            { source: "/bower_components/kityminder-core/dist/kityminder.core.css" },
+            { source: "/bower_components/color-picker/dist/color-picker.min.css" },
+            { source: "/bower_components/kityminder-editor/dist/kityminder.editor.min.css"},
             { source: "/css/blogs_peyton.css" }
         ]});
 });
@@ -46,7 +39,6 @@ router.get('/minder', function(req, res, next){
             console.log(err);
             res.status(400).send('{"show":"数据未成功获取~"}');
         }else{
-            console.log(minder.content);
             res.status(200).send(minder.content);
         }
     });
@@ -69,7 +61,6 @@ router.post('/minder/peyton', function(req, res, next){
 
 //更新脑图数据
 router.put('/minder/peyton', function(req, res, next){
-    console.log(req.body);
     Models.Minder.update({name: '知识图谱'}, {
         content: JSON.stringify(req.body)
     },{},function(err){
@@ -81,15 +72,15 @@ router.put('/minder/peyton', function(req, res, next){
     });
 });
 
+
+
 //获取博文
 router.get('/blog', function(req,res,next){
-    console.log(req.query.category);
     Models.Post.find({ category: req.query.category }, function(err, posts){
         if(err){
             console.log(err);
             res.status(400).send('{"show":"数据未成功获取~"}');
         }else{
-            console.log(posts);
             res.status(200).send(JSON.stringify(posts));
         }
     });
@@ -98,7 +89,6 @@ router.get('/blog', function(req,res,next){
 //新增博文
 router.post('/blog/peyton', function(req, res, next){
     //category是否存在？
-    console.log(req.body);
     var postNew = new Models.Post({
         title: req.body.title,
         category: req.body.category,
@@ -108,7 +98,6 @@ router.post('/blog/peyton', function(req, res, next){
             console.log(err);
             res.status(400).send('{"show":"保存数据出错~"}');
         }else{
-            console.log(post);
             res.status(200).send(JSON.stringify(post));
         }
     });
@@ -116,7 +105,6 @@ router.post('/blog/peyton', function(req, res, next){
 
 //更新博文
 router.put('/blog/peyton', function(req,res,next){
-    console.log(req.body);
     Models.Post.update({_id: req.body.id }, {
         title: req.body.title,
         category: req.body.category,

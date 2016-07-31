@@ -1,8 +1,10 @@
-body {
+body
+{
     background-color: #eee;
 }
 
-div.minder-editor-container {
+div.minder-editor-container
+{
     position: relative;
     top: 0;
 
@@ -11,12 +13,13 @@ div.minder-editor-container {
     box-shadow: 0 0 5px rgba(0, 0, 0, .4);
 }
 
-
-#blogsContainer {
+#blogsContainer
+{
     margin: 20px auto;
 }
 
-.blog-container {
+.blog-container
+{
     display: flex;
 
     margin: 20px;
@@ -27,28 +30,33 @@ div.minder-editor-container {
 }
 
 .blog-viewer,
-.blog-editor {
-    margin: 10px;
+.blog-editor
+{
     min-width: 600px;
     max-width: 1000px;
+    margin: 10px;
+
+    background-color: #fff; 
 
     flex: 1;
-
-    background-color: #fff;
 }
 
-.blog-viewer {
+.blog-viewer
+{
     padding: 20px;
+
     border-radius: 5px;
     box-shadow: 1px 2px 3px #ddd;
 }
 
-.blog-editor textarea {
+.blog-editor textarea
+{
     width: 100%;
     height: 100%;
 }
 
-.content-editor {
+.content-editor
+{
     display: none;
 
     align-items: stretch;
@@ -56,20 +64,21 @@ div.minder-editor-container {
     justify-content: center;
 }
 
-h1.editor-title {
-    margin: 0;
-    padding: 0 20px;
-    width: 100%;
-    height: 40px;
-
-    font-family: "Hiragino Sans GB", "Arial", "Microsoft Yahei";
+h1.editor-title
+{
+    font-family: 'Hiragino Sans GB', 'Arial', 'Microsoft Yahei';
     font-size: 14px;
     font-weight: normal;
     line-height: 40px;
+
+    width: 100%;
+    height: 40px;
+    margin: 0;
+    padding: 0 20px;
+
+    cursor: pointer; 
     text-align: center;
 
     color: white;
     background: #393f4f;
-
-    cursor: pointer;
 }

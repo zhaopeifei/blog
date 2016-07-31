@@ -1,3 +1,23 @@
 #appMain {
-    width: 100%;
+    background-color: #eee;
+}
+
+#minder-view {
+    height: 600px;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+}
+
+#blogsContainer {
+    margin: 20px auto;
+    min-width: 600px;
+    max-width: 1000px;
+}
+
+.blog-container {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #ddd;
+    background-color: #fff;
 }

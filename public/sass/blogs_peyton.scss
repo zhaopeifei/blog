@@ -1,58 +1,75 @@
-#appMain {
-    display: flex;
-
-    flex-direction: column;
+body {
+    background-color: #eee;
 }
 
-.nav-editor {
-    display: flex;
+div.minder-editor-container {
+    position: relative;
+    top: 0;
 
-    height: 30px;
+    height: 800px;
 
-    align-items: flex-end;
-    flex-flow: row nowrap;
-    justify-content: center;
-    label {
-        width: 80px;
-
-        text-align: right;
-    }
-    select {
-        min-width: 100px;
-        max-width: 400px;
-
-        flex: 1;
-    }
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
 }
 
-.btn {
-    margin: 0 20px;
+
+#blogsContainer {
+    margin: 20px auto;
 }
 
-.content-editor {
+.blog-container {
     display: flex;
+
+    margin: 20px;
 
     align-items: stretch;
     flex-flow: row wrap;
     justify-content: center;
 }
 
-.editor {
-    padding: 20px;
+.blog-viewer,
+.blog-editor {
+    margin: 10px;
     min-width: 600px;
     max-width: 1000px;
-    min-height: 80vh;
-    max-height: 88vh;
 
     flex: 1;
-    textarea {
-        width: 100%;
-        height: 100%;
-    }
-    article {
-        overflow-y: scroll;
 
-        border: 1px solid rgb(169, 169, 169);
-        height: 100%;
-    }
+    background-color: #fff;
+}
+
+.blog-viewer {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px #ddd;
+}
+
+.blog-editor textarea {
+    width: 100%;
+    height: 100%;
+}
+
+.content-editor {
+    display: none;
+
+    align-items: stretch;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+h1.editor-title {
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
+    height: 40px;
+
+    font-family: "Hiragino Sans GB", "Arial", "Microsoft Yahei";
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 40px;
+    text-align: center;
+
+    color: white;
+    background: #393f4f;
+
+    cursor: pointer;
 }

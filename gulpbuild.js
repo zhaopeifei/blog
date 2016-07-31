@@ -15,6 +15,9 @@ gulp.task('default', function(){
     gulp.src('./public/sources/*.*')
         .pipe(gulp.dest('../blog_peyton/public/sources'));
 
+    gulp.src('./public/bower.json')
+        .pipe(gulp.dest('../blog_peyton/public'));
+
     gulp.src('./bin/*')
         .pipe(gulp.dest('../blog_peyton/bin'));
 
