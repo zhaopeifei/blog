@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 var postSchema = new Schema({
     title: {type: String, unique: true}, //title是独一无二的
-    categore: String,
+    category: String,
     content: String,
     createDate: { type: Date, default: Date.now },
     updateDate: { type: Date, default: Date.now }
@@ -21,6 +21,12 @@ postSchema.pre('save', function(next){
     next();
 });
 
+var minderSchema = new Schema({
+    name: {type: String, unique: true}, //title是独一无二的
+    content: String,
+    createDate: { type: Date, default: Date.now },
+    updateDate: { type: Date, default: Date.now }
+});
 // postSchema.methods.testAdd = function testAdd(err, result){
 //     this.model('Post').find({ title: this.title}, function(err, posts){
 //             if(posts) return true;
@@ -54,3 +60,4 @@ postSchema.pre('save', function(next){
 // };
 
 exports.Post = db.model('Post',postSchema);
+exports.Minder = db.model('Minder',minderSchema);
