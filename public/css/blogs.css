@@ -6,6 +6,7 @@
 #minder-view
 {
     height: 600px;
+    height: 70vh;
 
     box-shadow: 0 0 5px rgba(0, 0, 0, .4);
 }
@@ -19,10 +20,22 @@
 
 .blog-container
 {
-    margin: 20px;
+    margin: 0 0 20px 0;
     padding: 20px;
 
     border-radius: 5px;
     background-color: #fff; 
     box-shadow: 1px 2px 3px #ddd;
+}
+
+.time-line
+{
+    font-weight: bold; 
+
+    margin: 5px 10px;
+
+    letter-spacing: 2px;
+
+    color: #999;
+    text-shadow: 0 1px #fff;
 }

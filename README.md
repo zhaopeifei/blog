@@ -41,13 +41,15 @@ bash：
 ## 获取生产应用
 1. 在服务器中使用git获取应用
 `git clone https://github.com/zhaopeifei/blog_peyton.git` 我在腾讯云服务器只开启了http80、https443端口，所以只能通过http、https获取
-2. 安装npm包：`npm install --production`
-3. 安装bower包，在public下，输入bash `bower install`
-4. 生成密匙
+2. 更新使用`git pull`
+3. 更改文件可读写权限为所有人可读写：`sudo chmod -R 777 blog_peyton`
+4. 安装npm包：`npm install --production`
+5. 安装bower包，在public下，输入bash `bower install`
+6. 生成密匙
 
     1. 生成服务器私有密匙：`openssl genrsa -out server.key 1024`
     2. 使用私有密匙生成证书签名请求文件：`openssl req -new -key server.key -out server.csr` 此步骤要求填写国家、地区、联系方式等信息，Common Name要匹配服务器域名。
-    3. 通过私有密匙自签名生成证书(带签名的公开密匙)：`openssl x509 -req -in server.csr -signkey server.key -out server.cert`。可以为pem格式
+    3. 通过私有密匙自签名生成证书(带签名的公开密匙)：`openssl x509 -req -in server.csr -signkey server.key -out server.cert -days 3650`。可以为pem格式
 
-5. 可能需要修改端口号，在开发时，express可能将端口号设为了3000等，需要修改。最好再生成生成应用上时就修改。
-6. `node bin/www`或`npm start`
+7. 可能需要修改端口号，在开发时，express可能将端口号设为了3000等，需要修改。最好再生成生成应用上时就修改。
+8. `sudo node bin/www`或`sudo npm start` 注意，使用超级用户身份开启，因为需要用到端口。
