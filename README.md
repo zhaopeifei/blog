@@ -41,7 +41,7 @@ bash：
 ## 获取生产应用
 1. 在服务器中使用git获取应用
 `git clone https://github.com/zhaopeifei/blog_peyton.git` 我在腾讯云服务器只开启了http80、https443端口，所以只能通过http、https获取
-2. 更新使用`git pull`
+2. 更新使用`git pull` 修改后要使用 `git reset --hard  git pull`覆盖本地库
 3. 更改文件可读写权限为所有人可读写：`sudo chmod -R 777 blog_peyton`
 4. 安装npm包：`npm install --production`
 5. 安装bower包，在public下，输入bash `bower install`
