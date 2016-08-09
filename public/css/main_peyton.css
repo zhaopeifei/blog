@@ -84,6 +84,8 @@ body:before
 
     transition: background .3s ease-in-out, color .3s ease-in, transform .3s ease-in-out; 
     text-decoration: none;
+
+    color: #159;
 }
 .header-link:hover
 {
@@ -105,7 +107,7 @@ body:before
 
 .header-left .header-link
 {
-    font-family: 'CaiYunHanMaoBi-3f28ad4b362a5', 'Helvetica neue', Helvetica, Tahoma, 'lantinghei sc', 'Microsoft Yahei', sans-serif;
+    font-family: 'CaiYunHanMaoBi-4e68b84f162a5', 'Helvetica neue', Helvetica, Tahoma, 'lantinghei sc', 'Microsoft Yahei', sans-serif;
     font-size: 32px;
 }
 
@@ -182,9 +184,4 @@ body:before
 
     src: url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.gif');
     src: url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.gif?#iefix') format('embedded-opentype'), url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.bmp') format('woff'), url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.jpg') format('truetype'), url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.png#CaiYunHanMaoBi-Xing') format('svg');
-}
-
-.css4e68b84f162a5
-{
-    font-family: 'CaiYunHanMaoBi-4e68b84f162a5';
 }

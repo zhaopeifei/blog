@@ -9,7 +9,6 @@ router.get('/',function(req, res){
             console.log(err);
             res.status(400).send('{"show":"数据未成功获取~"}');
         }else{
-            console.log(minder);
             res.render('blogs',{ sources: [
                     { source: "/bower_components/bootstrap/dist/css/bootstrap.css" },
                     { source: "/bower_components/kityminder-core/dist/kityminder.core.css" },
@@ -21,7 +20,11 @@ router.get('/',function(req, res){
 
 //管理页面
 router.get('/peyton', function(req, res, next){
-    
+    var cookie = req.signedCookies.signed_permit;
+    if(cookie !== 'sudo'){
+        res.redirect('https://' + req.hostname + '/login');
+    }
+
     res.render('blogs_peyton', { layout: 'main_peyton', sources: [
             { source: "/bower_components/bootstrap/dist/css/bootstrap.css" },
             { source: "/bower_components/codemirror/lib/codemirror.css" },
@@ -47,6 +50,11 @@ router.get('/minder', function(req, res, next){
 
 //新增脑图数据
 router.post('/minder/peyton', function(req, res, next){
+    var cookie = req.signedCookies.signed_permit;
+    if(cookie !== 'sudo'){
+        res.redirect('https://' + req.hostname + '/login');
+    }
+
     var minderNew = new Models.Minder({
         name: req.body.root.data.text,
         content: JSON.stringify(req.body)
@@ -62,6 +70,11 @@ router.post('/minder/peyton', function(req, res, next){
 
 //更新脑图数据
 router.put('/minder/peyton', function(req, res, next){
+    var cookie = req.signedCookies.signed_permit;
+    if(cookie !== 'sudo'){
+        res.redirect('https://' + req.hostname + '/login');
+    }
+
     Models.Minder.update({name: 'minder'}, {
         content: JSON.stringify(req.body)
     },{},function(err){
@@ -89,6 +102,11 @@ router.get('/blog', function(req,res,next){
 
 //新增博文
 router.post('/blog/peyton', function(req, res, next){
+var cookie = req.signedCookies.signed_permit;
+    if(cookie !== 'sudo'){
+        res.redirect('https://' + req.hostname + '/login');
+    }
+
     //category是否存在？
     var postNew = new Models.Post({
         title: req.body.title,
@@ -106,6 +124,11 @@ router.post('/blog/peyton', function(req, res, next){
 
 //更新博文
 router.put('/blog/peyton', function(req,res,next){
+    var cookie = req.signedCookies.signed_permit;
+    if(cookie !== 'sudo'){
+        res.redirect('https://' + req.hostname + '/login');
+    }
+
     Models.Post.update({_id: req.body.id }, {
         title: req.body.title,
         category: req.body.category,
@@ -121,6 +144,11 @@ router.put('/blog/peyton', function(req,res,next){
 
 //删除博文
 router.delete('/blog/peyton', function(req,res,next){
+    var cookie = req.signedCookies.signed_permit;
+    if(cookie !== 'sudo'){
+        res.redirect('https://' + req.hostname + '/login');
+    }
+
     Models.Post.remove({_id: req.query.id},function(err){
         if(err){
             res.status(500).send('{"show":"出现错误"}');

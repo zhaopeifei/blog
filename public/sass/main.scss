@@ -1,6 +1,6 @@
 
 $containerMaxWidth: 1200px;
-$headerNavHeight: 48px;
+$headerNavHeight: 3em;
 $bodyFontFamily: "Helvetica neue",Helvetica,Tahoma,"lantinghei sc","Microsoft Yahei",sans-serif;
 $faviconFontFamily: "CaiYunHanMaoBi-4e68b84f162a5";
 $headerColor: #38f;
@@ -24,8 +24,9 @@ body {
 
 body:before {
     display: block;
+    border-top: 2px solid #000;
 
-    height: $headerNavHeight + 2px;
+    height: $headerNavHeight;
 
     content: "";
 }
@@ -78,7 +79,7 @@ body:before {
     display: block;
 
     box-sizing: border-box;
-    padding: 0 15px;
+    padding: 0 1em;
     height: $headerNavHeight;
     //font: #{$headerNavHeight/3}/#{$headerNavHeight};
 
@@ -86,7 +87,7 @@ body:before {
     line-height: $headerNavHeight;
     text-decoration: none;
 
-    color: #16b;
+    color: #159;
 
     transition: background .3s ease-in-out, color .3s ease-in, transform .3s ease-in-out;
 
@@ -108,7 +109,9 @@ body:before {
 
 .header-left .header-link {
     font-family: $faviconFontFamily,$bodyFontFamily;
-    font-size: 32px;
+    font-size: 2em;
+    line-height: 1.5em;
+    height: 1.5em;
 }
 
 #appMain {
@@ -156,8 +159,8 @@ body:before {
 
 .footer-icon {
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    width: 2em;
+    height: 2em;
 
     transition: color .3s ease-in, transform .3s ease-in-out;
 
@@ -177,4 +180,3 @@ body:before {
     src: url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.gif');
     src: url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.gif?#iefix') format('embedded-opentype'),     url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.bmp') format('woff'),     url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.jpg') format('truetype'),     url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.png#CaiYunHanMaoBi-Xing') format('svg');
 }
-.css4e68b84f162a5{font-family: 'CaiYunHanMaoBi-4e68b84f162a5';}

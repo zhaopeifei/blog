@@ -8,6 +8,8 @@ var homepage = require('./routes/homepage');
 var blogs = require('./routes/blogs');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
+var comments = require('./routes/comments');
+var page = require('./routes/page');
 
 var app = express();
 
@@ -20,6 +22,8 @@ var exphbs = require('express3-handlebars').create({
 });
 app.engine('hbs', exphbs.engine);
 app.set('view engine', 'hbs');
+
+app.use(require('cookie-parser')('test'));
 
 //test
 app.use(function(req, res, next) {
@@ -41,6 +45,10 @@ app.use('/', homepage);
 app.use('/blogs', blogs);
 app.use('/profile', profile);
 app.use('/login', login);
+
+app.use('/comments', comments);
+app.use('/collections', comments);
+app.use('/page', page);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

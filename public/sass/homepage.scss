@@ -33,9 +33,9 @@ body {
 .my-photo {
     display: block;
 
-    margin: 10px auto;
+    margin: 1em auto;
     border-radius: 50%;
-    width: 100px;
+    width: 6em;
 
     animation-name: freeFall;
     animation-duration: 5s;
@@ -73,10 +73,10 @@ body {
 }
 
 .contact-icon {
-    margin: 10px;
+    margin: .5em;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 3em;
+    height: 3em;
 
     transition: background ease-in-out .3s, transform .3s ease-in-out;
     svg {
@@ -97,9 +97,9 @@ body {
 }
 
 .abstract-pro {
-    margin: 10px;
-    border-radius: 20px;
-    padding: 20px;
+    margin: .5em;
+    border-radius: 1em;
+    padding: 1em;
     min-width: 150px;
 
     text-decoration: none;

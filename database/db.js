@@ -21,6 +21,11 @@ postSchema.pre('save', function(next){
     next();
 });
 
+postSchema.pre('update', function(next){
+    this.update({},{$set: { updateDate: Date.now()} });
+    next();
+});
+
 var minderSchema = new Schema({
     name: {type: String, unique: true}, //title是独一无二的
     content: String,

@@ -13,9 +13,11 @@ body:before
 {
     display: block;
 
-    height: 50px;
+    height: 3em;
 
-    content: '';
+    content: ''; 
+
+    border-top: 2px solid #000;
 }
 
 #appHeader
@@ -25,7 +27,7 @@ body:before
     top: 0;
 
     width: 100%;
-    height: 48px;
+    height: 3em;
 
     border-top: 2px solid #38f;
     background-color: #fff;
@@ -43,7 +45,7 @@ body:before
 {
     float: left;
 
-    height: 48px; 
+    height: 3em; 
     margin: 0;
     padding: 0;
 
@@ -54,7 +56,7 @@ body:before
 {
     float: right;
 
-    height: 48px; 
+    height: 3em; 
     margin: 0;
     padding: 0;
 
@@ -66,26 +68,26 @@ body:before
 {
     display: inline-block;
 
-    height: 48px;
+    height: 3em;
 
     vertical-align: middle;
 }
 
 .header-link
 {
-    font-size: 16px;
-    line-height: 48px;
+    font-size: 1em;
+    line-height: 3em;
 
     display: block;
 
     box-sizing: border-box;
-    height: 48px;
-    padding: 0 15px;
+    height: 3em;
+    padding: 0 1em;
 
     transition: background .3s ease-in-out, color .3s ease-in, transform .3s ease-in-out; 
     text-decoration: none;
 
-    color: #16b;
+    color: #159;
 }
 .header-link:hover
 {
@@ -108,7 +110,10 @@ body:before
 .header-left .header-link
 {
     font-family: 'CaiYunHanMaoBi-4e68b84f162a5', 'Helvetica neue', Helvetica, Tahoma, 'lantinghei sc', 'Microsoft Yahei', sans-serif;
-    font-size: 32px;
+    font-size: 2em;
+    line-height: 1.5em;
+
+    height: 1.5em;
 }
 
 #appMain
@@ -165,8 +170,8 @@ body:before
 
 .footer-icon
 {
-    width: 32px;
-    height: 32px;
+    width: 2em;
+    height: 2em;
 
     transition: color .3s ease-in, transform .3s ease-in-out; 
 
@@ -190,9 +195,4 @@ body:before
 
     src: url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.gif');
     src: url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.gif?#iefix') format('embedded-opentype'), url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.bmp') format('woff'), url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.jpg') format('truetype'), url('//cdn.webfont.youziku.com/webfonts/nomal/25253/165/579e0cdcf629d80fb8a7bc4e.png#CaiYunHanMaoBi-Xing') format('svg');
-}
-
-.css4e68b84f162a5
-{
-    font-family: 'CaiYunHanMaoBi-4e68b84f162a5';
 }

@@ -1,13 +1,16 @@
 #appMain {
-    background-color: #f2f2f2
+    background-color: #f2f2f2;
 }
 #profileContainer {
     margin: 20px auto;
     max-width: 1200px;
-    column-width: 500px;
 
+    -webkit-column-width: 500px; /* Safari 和 Chrome */
+       -moz-column-width: 500px; /* Firefox */
+            column-width: 500px;
     a {
         text-decoration: none;
+
         color: #333;
         &:hover {
             text-decoration: none;
@@ -16,26 +19,27 @@
 }
 
 figure {
-    width: 480px;
+    margin: 10px auto;
     padding: 10px;
+    width: 480px;
+
     background-color: #fff;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
 
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
     &:hover {
-        box-shadow: 0 10px 20px 0 rgba(0,0,0,0.5);
         border-radius: 5px;
-    } 
-    figcaption {
-        text-align: center;
-        font-weight: bold;
-        font-size: 1.5em;
-    }
 
+        box-shadow: 0 10px 20px 0 rgba(0,0,0,.5);
+    }
+    figcaption {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: center;
+    }
     img {
+        border: solid 1px #ddd;
+        border-radius: 3px;
         width: 480px;
         height: auto;
-        border-radius: 3px;
-        border: solid 1px #ddd;
     }
 }
-
