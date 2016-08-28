@@ -200,7 +200,9 @@ body:before
 
 #appMain
 {
-    background-color: #f2f2f2;
+    background-color: #f6f6f6;
+    background-image: -webkit-linear-gradient(left, transparent 0%, transparent 50%, rgba(0, 0, 0, .015) 50%, rgba(0, 0, 0, .015) 100%), -webkit-radial-gradient(rgba(0, 0, 0, .05) 10%, transparent 15%);
+    background-size: 1.5em 1.5em, .5em .5em;
 }
 
 #profileContainer
